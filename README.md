@@ -39,7 +39,8 @@
 
 - `.cz_config.js` で設定したコミットメッセージを対話的に作成できる
 
-### [commitlint](https://commitlint.js.org/#/)
+### [commitlint](https://commitlint.js.org/#/) + [commitlint-config-gitmoji](https://github.com/arvinxx/gitmoji-commit-workflow/tree/master/packages/commitlint-config)
 
 - `commitlint.config.js`でコミットメッセージのフォーマットを指定
-- 上記フォーマットに当てはまっているか自動チェックしてくれる
+- 上記フォーマットに当てはまらなければ、エラーとしてコミットを止めてくれる
+- 絵文字を使いたかったので[gitmoji](https://gitmoji.dev/)を選択
