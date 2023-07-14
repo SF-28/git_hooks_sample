@@ -1,0 +1,24 @@
+{
+  "name": "mdgc",
+  "version": "1.0.0",
+  "description": "git_hooks",
+  "main": "",
+  "scripts": {
+    "prepare": "bash -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
+    "commit": "pre-commit run && npx cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz_config.js"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "commitizen": "^4.3.0",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-customizable": "^7.0.0"
+  }
+}
