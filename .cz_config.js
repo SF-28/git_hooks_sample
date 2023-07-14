@@ -22,8 +22,8 @@ module.exports = {
       title: "Styles",
     },
     {
-      value: "♺ refactor",
-      name: "♺  refactor: リファクタリング（機能追加やバグ修正を含まない変更）",
+      value: "♻️ refactor",
+      name: "♻️  refactor: リファクタリング（機能追加やバグ修正を含まない変更）",
       title: "Code Refactoring",
     },
     {
@@ -42,8 +42,8 @@ module.exports = {
       title: "Builds",
     },
     {
-      value: "❓ chore",
-      name: "❓ chore:    その他の変更（補助ツール、ドキュメント生成などの、ソースやテストの変更を含まない変更）",
+      value: "🔧 chore",
+      name: "🔧 chore:    その他の変更（補助ツール、ドキュメント生成などの、ソースやテストの変更を含まない変更）",
       title: "Chores",
     },
   ],
