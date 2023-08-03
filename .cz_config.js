@@ -37,6 +37,11 @@ module.exports = {
       title: "Tests",
     },
     {
+      value: "🔥 remove",
+      name: "🔥 remove:   コードやファイルの削除",
+      title: "Removes",
+    },
+    {
       value: "🏗️ build",
       name: "🏗️  build:    ビルドシステムや外部依存に関する変更（スコープ例: gulp, broccoli, npm）",
       title: "Builds",
@@ -45,6 +50,11 @@ module.exports = {
       value: "🔧 chore",
       name: "🔧 chore:    その他の変更（補助ツール、ドキュメント生成などの、ソースやテストの変更を含まない変更）",
       title: "Chores",
+    },
+    {
+      value: "🚧 wip",
+      name: "🚧 wip:      作業中の内容",
+      title: "WIPs",
     },
   ],
   scopes: [
@@ -72,5 +82,5 @@ module.exports = {
     confirmCommit: "この内容でコミットしてよろしいですか?",
   },
   allowCustomScopes: true,
-  allowBreakingChanges: ["✨ feat", "🐛 fix"],
+  allowBreakingChanges: ["✨ feat", "🐛 fix", "🔥 remove"],
 };
