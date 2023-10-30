@@ -4,7 +4,9 @@
   "description": "git_hooks",
   "main": "",
   "scripts": {
-    "prepare": "bash -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
+    "prepare": "run-script-os",
+    "prepare:win32": "cmd /c \"COPY .\\git_hooks\\commit-msg .\\.git\\hooks\\\"",
+    "prepare:darwin": "zsh -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
     "commit": "pre-commit run && npx cz"
   },
   "config": {
@@ -19,7 +21,8 @@
     "@commitlint/cli": "^17.6.6",
     "commitizen": "^4.3.0",
     "commitlint-config-gitmoji": "^2.3.1",
-    "cz-customizable": "^7.0.0"
+    "cz-customizable": "^7.0.0",
+    "run-script-os": "^1.1.6"
   },
   "license": "ISC"
 }
