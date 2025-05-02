@@ -60,6 +60,8 @@
 - 静的解析やフォーマッタ、セキュリティ検査などをコミット前に自動実行
 - [Supported hooks](https://pre-commit.com/hooks.html)から欲しいものを追加
   - 各種hooksの設定はそれぞれのリポジトリを参照
+- [Sourcegraph](https://sourcegraph.com/search)から人気のhooksを探すことができる
+  - Pythonファイルに対するhooks [`file:^\.pre-commit-hooks\.yaml$ "types: [python]"`](https://sourcegraph.com/search?q=file:^\.pre-commit-hooks\.yaml$%20%22types:%20[go]%22)
 
 ### [commitizen](https://github.com/commitizen/cz-cli) + [cz-customizable](https://github.com/leoforfree/cz-customizable#steps)
 
