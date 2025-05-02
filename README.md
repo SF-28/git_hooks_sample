@@ -12,10 +12,36 @@
 
   ```cmd
   asdf plugin add nodejs
+  asdf plugin add yarn
   asdf plugin add pre-commit
+  asdf plugin add python
   asdf install
   yarn install
   ```
+
+## 各種バージョンアップ手順
+
+- .tool-versions
+
+  ```cmd
+  asdf plugin update --all
+
+  # パッケージのバージョンを確認
+  asdf list all <package> # 全バージョン
+  asdf latest <package>   # 最新バージョン
+
+  # バージョンを指定して更新
+  asdf local <package> <version>
+
+  asdf install
+  ```
+
+- .pre-commit-config.yaml
+  - `pre-commit autoupdate`
+- package.json
+  - `yarn upgrade-interactive --latest`
+  - アップグレードしたいパッケージをSpaceキーで選択(全選択はaキー)
+  - Enterキーでアップグレード
 
 ## コミット方法
 

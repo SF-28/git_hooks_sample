@@ -1,5 +1,5 @@
 {
-  "name": "mdgc",
+  "name": "git_hooks",
   "version": "1.0.0",
   "description": "git_hooks",
   "main": "",
@@ -18,10 +18,10 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.6",
-    "commitizen": "^4.3.0",
+    "@commitlint/cli": "^19.8.0",
+    "commitizen": "^4.3.1",
     "commitlint-config-gitmoji": "^2.3.1",
-    "cz-customizable": "^7.0.0",
+    "cz-customizable": "^7.4.0",
     "run-script-os": "^1.1.6"
   },
   "license": "ISC"
