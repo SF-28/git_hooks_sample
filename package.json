@@ -1,7 +1,7 @@
 {
-  "name": "git_hooks",
+  "name": "base_repo",
   "version": "1.0.0",
-  "description": "git_hooks",
+  "description": "base_repo",
   "main": "",
   "scripts": {
     "prepare": "run-script-os",
