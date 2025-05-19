@@ -11,3 +11,22 @@ _exclude:
     - ".svn"
     - "CHANGELOG.md"
     - "README.md"
+_message_before_copy: |
+    git_hooks_sample を対象のディレクトリに適用します
+    既存ファイルと競合する場合  Y:上書き | n:スキップ
+    スキップした場合は該当ファイルの内容を手動で取り込んでください
+_message_after_copy: |
+    git_hooks_sample を対象のディレクトリに適用しました
+
+    # セットアップ
+    mise install
+    pnpm install
+
+    # コミット
+    pnpm commit
+_message_before_update: |
+    git_hooks_sample の更新を取り込みます
+    既存ファイルと競合する箇所はマーカー付きで取り込まれます
+_message_after_update: |
+    git_hooks_sample の更新を取り込みました
+    既存ファイルと競合している場合は手動で解消してください
