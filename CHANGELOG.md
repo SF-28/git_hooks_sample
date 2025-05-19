@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/SF-28/git_hooks_sample/compare/v1.0.0...v2.0.0) (2025-05-19)
+
+
+* 🔥 remove: scopeを削除 ([c6209d6](https://github.com/SF-28/git_hooks_sample/commit/c6209d6b09e06421b8e21e8ba3b00f5358baf5b1))
+
+
+### BREAKING CHANGES
+
+* Scopeを削除
+
 # 1.0.0 (2025-05-19)
 
 
