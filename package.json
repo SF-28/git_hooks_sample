@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "git_hooks",
   "main": "",
+  "private": true,
   "scripts": {
     "prepare": "run-script-os",
     "prepare:win32": "cmd /c \"COPY .\\git_hooks\\commit-msg .\\.git\\hooks\\\"",
     "prepare:darwin": "zsh -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
-    "commit": "pre-commit run && npx cz"
+    "commit": "pre-commit run && pnpm cz"
   },
   "config": {
     "commitizen": {
@@ -18,11 +19,14 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
+    "@commitlint/cli": "^19.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.3.1",
     "commitlint-config-gitmoji": "^2.3.1",
     "cz-customizable": "^7.4.0",
-    "run-script-os": "^1.1.6"
+    "run-script-os": "^1.1.6",
+    "semantic-release": "^24.2.4"
   },
   "license": "ISC"
 }

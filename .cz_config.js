@@ -57,13 +57,13 @@ module.exports = {
       title: "WIPs",
     },
   ],
-  scopes: [
-    { name: 'project' },
-    { name: 'infra' },
-    { name: 'front_end' },
-    { name: 'back_end' }
-  ],
-  // コミットタイプによってスコープを変えたい場合は以下で指定。
+  // scopes: [
+  //   { name: 'project' },
+  //   { name: 'infra' },
+  //   { name: 'front_end' },
+  //   { name: 'back_end' }
+  // ],
+  // // コミットタイプによってスコープを変えたい場合は以下で指定。
   // scopeOverrides: {
   //   fix: [
   //     {name: 'infra'},
@@ -73,9 +73,9 @@ module.exports = {
   // },
   messages: {
     type: "コミットタイプを選択:\n",
-    scope: "変更内容のスコープ:\n",
-    customScope: "変更内容のスコープ(例:コンポーネントやファイル名)(optional):\n",
-    subject: "変更内容の要約:\n",
+    // scope: "変更内容のスコープ:\n",
+    // customScope: "変更内容のスコープ(例:コンポーネントやファイル名)(optional):\n",
+    subject: "変更内容の概要:\n",
     body: '変更内容の詳細（"|"で改行）(optional):\n',
     breaking: "破壊的変更についての記述(optional):\n",
     footer: '関連issueを追記 (例:"Fix #123", " Close #123")(optional):\n',

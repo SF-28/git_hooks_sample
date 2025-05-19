@@ -7,16 +7,12 @@
 ## 初期設定
 
 - `git clone`
-- [asdfのインストール](https://asdf-vm.com/guide/getting-started.html)
+- [miseのインストール](https://mise.jdx.dev/getting-started.html#installing-mise-cli)
 - 以下コマンドを実行
 
   ```cmd
-  asdf plugin add nodejs
-  asdf plugin add yarn
-  asdf plugin add pre-commit
-  asdf plugin add python
-  asdf install
-  yarn install
+  mise install
+  pnpm install
   ```
 
 ## 各種バージョンアップ手順
@@ -24,32 +20,28 @@
 - .tool-versions
 
   ```cmd
-  asdf plugin update --all
+  # 古いパッケージを確認
+  mise outdated
 
-  # パッケージのバージョンを確認
-  asdf list all <package> # 全バージョン
-  asdf latest <package>   # 最新バージョン
+  # 一括更新
+  mise upgrade
 
-  # バージョンを指定して更新
-  asdf local <package> <version>
-
-  asdf install
+  # 特定のパッケージを更新
+  mise use <package>@<version>
   ```
 
 - .pre-commit-config.yaml
   - `pre-commit autoupdate`
 - package.json
-  - `yarn upgrade-interactive --latest`
-  - アップグレードしたいパッケージをSpaceキーで選択(全選択はaキー)
-  - Enterキーでアップグレード
+  - `pnpm upgrade`
 
 ## コミット方法
 
-変更をステージし、`yarn commit`
+変更をステージし、`pnpm commit`
 
 ## ツール一覧
 
-### [asdf](https://asdf-vm.com/)
+### [mise](https://asdf-vm.com/)
 
 - `.tool-versions`で様々なツールをバージョン管理できる
 - 作業ディレクトリごとに自動で対象バージョンを切り替えてくれる
