@@ -9,30 +9,18 @@
 - `git clone`
 - [miseのインストール](https://mise.jdx.dev/getting-started.html#installing-mise-cli)
 - 以下コマンドを実行
-
-  ```cmd
-  mise install
-  pnpm install
-  ```
+  - `mise install`
+  - `pnpm install`
 
 ## 各種バージョンアップ手順
 
-- .tool-versions
-
-  ```cmd
-  # 古いパッケージを確認
-  mise outdated
-
-  # 一括更新
-  mise upgrade
-
-  # 特定のパッケージを更新
-  mise use <package>@<version>
-  ```
-
-- .pre-commit-config.yaml
+- mise
+  - `mise outdated`
+  - `mise upgrade` # 全て更新する場合
+  - `mise use <package>@<version>` # 特定のパッケージを更新する場合
+- pre-commit
   - `pre-commit autoupdate`
-- package.json
+- pnpm
   - `pnpm upgrade`
 
 ## コミット方法
@@ -43,8 +31,9 @@
 
 ### [mise](https://asdf-vm.com/)
 
-- `.tool-versions`で様々なツールをバージョン管理できる
+- `mise.toml` で様々なツールをバージョン管理できる
 - 作業ディレクトリごとに自動で対象バージョンを切り替えてくれる
+  - asdf の `.tool-versions` にも対応
 
 ### [pre-commit](https://pre-commit.com/)
 
@@ -63,4 +52,4 @@
 
 - `commitlint.config.js`でコミットメッセージのフォーマットを指定
 - 上記フォーマットに当てはまらなければ、エラーとしてコミットを止めてくれる
-- 絵文字を使いたかったので[gitmoji](https://gitmoji.dev/)を選択
+- 絵文字を使いたかったので [gitmoji](https://gitmoji.dev/) を選択
