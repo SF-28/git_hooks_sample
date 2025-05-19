@@ -1,0 +1,13 @@
+# config
+_answers_file: "copier_answers/copier-answers.git_hooks_sample.yml"
+_exclude:
+    - "copier.yaml"
+    - "copier.yml"
+    - "~*"
+    - "*.py[co]"
+    - "__pycache__"
+    - ".git"
+    - ".DS_Store"
+    - ".svn"
+    - "CHANGELOG.md"
+    - "README.md"
