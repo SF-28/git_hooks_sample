@@ -2,7 +2,19 @@ export default {
 branches: ['main'],
   plugins: [
     // 1. コミット履歴から次期バージョン番号を算出する。
-    '@semantic-release/commit-analyzer',
+    ["@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "refactor", "release": "patch" },
+          { "type": "ci",        "release": "patch" },
+          { "type": "style",     "release": false }   // 無視したいもの
+        ],
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"] // 日本語などに置換も可
+        }
+        }
+    ],
 
     // 2. リリースノートのためのコンテンツ（テキスト）を生成する。
     '@semantic-release/release-notes-generator',
@@ -26,7 +38,7 @@ branches: ['main'],
       '@semantic-release/git',
       {
         assets: ['package.json', 'CHANGELOG.md'],
-        message: '🔧 chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+        message: '🔖 Release: ${nextRelease.version}\n\n${nextRelease.notes}'
       },
     ],
 
