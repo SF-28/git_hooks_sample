@@ -6,14 +6,10 @@ branches: ['main'],
       {
         "preset": "conventionalcommits",
         "releaseRules": [
-          { "type": "refactor", "release": "patch" },
-          { "type": "ci",        "release": "patch" },
-          { "type": "style",     "release": false }   // 無視したいもの
+          { "type": "perf",      "release": "patch" },
+          { "type": "build",     "release": "patch" },
         ],
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"] // 日本語などに置換も可
-        }
-        }
+      }
     ],
 
     // 2. リリースノートのためのコンテンツ（テキスト）を生成する。
