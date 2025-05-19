@@ -6,6 +6,8 @@ branches: ['main'],
       {
         "preset": "conventionalcommits",
         "releaseRules": [
+          { "type": "feat",      "release": "minor" },
+          { "type": "fix",       "release": "patch" },
           { "type": "perf",      "release": "patch" },
           { "type": "build",     "release": "patch" },
         ],
