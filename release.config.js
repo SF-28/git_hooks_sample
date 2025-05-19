@@ -2,16 +2,20 @@ export default {
 branches: ['main'],
   plugins: [
     // 1. コミット履歴から次期バージョン番号を算出する。
-    ["@semantic-release/commit-analyzer",
+    ['@semantic-release/commit-analyzer',
       {
-        "preset": "conventionalcommits",
-        "releaseRules": [
-          { "type": "feat",      "release": "minor" },
-          { "type": "fix",       "release": "patch" },
-          { "type": "perf",      "release": "patch" },
-          { "type": "build",     "release": "patch" },
+        preset: 'conventionalcommits',
+        parserOpts: {
+          headerPattern: /^(\p{Emoji}*)?\s*(\w*)(?:\((.*)\))?:\s*(.*)$/u,
+          headerCorrespondence: ['emoji', 'type', 'scope', 'subject'],
+        },
+        releaseRules: [
+          { type: 'feat',  release: 'minor' },
+          { type: 'fix',   release: 'patch' },
+          { type: 'perf',  release: 'patch' },
+          { type: 'build', release: 'patch' },
         ],
-      }
+      },
     ],
 
     // 2. リリースノートのためのコンテンツ（テキスト）を生成する。
