@@ -53,3 +53,8 @@
 - `commitlint.config.js`でコミットメッセージのフォーマットを指定
 - 上記フォーマットに当てはまらなければ、エラーとしてコミットを止めてくれる
 - 絵文字を使いたかったので [gitmoji](https://gitmoji.dev/) を選択
+
+### [semantic-release](https://semantic-release.gitbook.io/semantic-release/) + [semantic-release-changelog]
+
+- コミットに応じて自動でバージョンを上げてくれる
+- `package.json`のversionタグ, Tag, Releases, Changelog などを自動で更新してくれる
