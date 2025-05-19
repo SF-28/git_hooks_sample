@@ -15,19 +15,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Node をセットアップ（pnpm 用キャッシュを有効化）
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '23'      # LTS
-          cache: 'pnpm'           # pnpm-lock.yaml をキーに自動キャッシュ
-
       # pnpm をインストール（Corepack でも良いが、Action の方が確実）
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 10             # pnpm のバージョン
           run_install: false      # 依存関係のインストールは後で実行
+
+      # Node をセットアップ（pnpm 用キャッシュを有効化）
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'      # LTS
+          cache: 'pnpm'           # pnpm-lock.yaml をキーに自動キャッシュ
 
       # prepare スクリプトを無視して依存関係だけ取得
       - name: Install dependencies (skip prepare)
