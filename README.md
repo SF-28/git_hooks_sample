@@ -6,31 +6,41 @@
 
 ## 初期設定
 
-- `git clone`
-- [miseのインストール](https://mise.jdx.dev/getting-started.html#installing-mise-cli)
-- 以下コマンドを実行
-  - `mise install`
-  - `pnpm install`
+```sh
+# git cloone
+git clone https://github.com/SF-28/git_hooks_sample <dist>
+# or copier copy
+copier copy https://github.com/SF-28/git_hooks_sample <dist>
 
-## 各種バージョンアップ手順
-
-- mise
-  - `mise outdated`
-  - `mise upgrade` # 全て更新する場合
-  - `mise use <package>@<version>` # 特定のパッケージを更新する場合
-- pre-commit
-  - `pre-commit autoupdate`
-- pnpm
-  - `pnpm upgrade`
+cd <dist>
+mise install
+pnpm install
+```
 
 ## コミット方法
 
 変更をステージし、`pnpm commit`
 
+## 各種バージョンアップ手順
+
+```sh
+# mise
+mise outdated # 最新版を確認
+mise upgrade  # 全て更新する場合
+mise use <package>@<version> # 特定のパッケージを更新する場合
+
+# pre-commit
+pre-commit autoupdate
+
+# pnpm
+pnpm upgrade
+```
+
 ## ツール一覧
 
-### [mise](https://asdf-vm.com/)
+### [mise](https://mise.jdx.dev/)
 
+- [インストール](https://mise.jdx.dev/getting-started.html#installing-mise-cli)
 - `mise.toml` で様々なツールをバージョン管理できる
 - 作業ディレクトリごとに自動で対象バージョンを切り替えてくれる
   - asdf の `.tool-versions` にも対応
@@ -58,3 +68,9 @@
 
 - コミットに応じて自動でバージョンを上げてくれる
 - `package.json`のversionタグ, Tag, Releases, Changelog などを自動で更新してくれる
+
+### [copier](https://copier.readthedocs.io/en/stable/)
+
+- テンプレートをプロジェクトに適用するツール
+- 本リポジトリのツール群も copier を使って適用することができる
+  - `copier copy https://github.com/SF-28/git_hooks_sample <dist>`
