@@ -1,3 +1,5 @@
+# [2.2.0](https://github.com/SF-28/git_hooks_sample/compare/v2.1.0...v2.2.0) (2025-05-19)
+
 # [2.1.0](https://github.com/SF-28/git_hooks_sample/compare/v2.0.0...v2.1.0) (2025-05-19)
 
 # [2.0.0](https://github.com/SF-28/git_hooks_sample/compare/v1.0.0...v2.0.0) (2025-05-19)
