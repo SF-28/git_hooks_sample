@@ -20,14 +20,24 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
+    "@eslint/css": "^0.8.1",
+    "@eslint/js": "^9.27.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.3.1",
     "commitlint-config-gitmoji": "^2.3.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "cz-customizable": "^7.4.0",
+    "eslint": "^9.27.0",
+    "globals": "^16.1.0",
     "run-script-os": "^1.1.6",
     "semantic-release": "^24.2.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob": "^9.3.5",
+      "rimraf": "^6.0.1"
+    }
   },
   "license": "ISC"
 }

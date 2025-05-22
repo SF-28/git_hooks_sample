@@ -52,7 +52,7 @@ module.exports = {
       title: "WIPs",
     },
   ],
-  skipQuestions: ['scope'],
+  skipQuestions: ["scope"],
   messages: {
     type: "コミットタイプを選択:\n",
     subject: "変更内容の概要:\n",

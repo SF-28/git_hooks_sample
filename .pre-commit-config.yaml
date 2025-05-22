@@ -17,9 +17,8 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      # 直コミットを禁止する(Pull Request -> merge を強制)
-      # - id: no-commit-to-branch
-      #   args: [--branch, main]
+      - id: no-commit-to-branch
+        args: [--branch, main]
       - id: mixed-line-ending
       - id: requirements-txt-fixer
       - id: trailing-whitespace
@@ -29,3 +28,18 @@ repos:
     hooks:
       - id: markdownlint
         files: \.(markdown|md)$
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        files: \.(js|jsx|ts|tsx)$
+
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: npx eslint
+        language: node
+        types: [javascript]
+        files: \.(js|jsx|ts|tsx)$
