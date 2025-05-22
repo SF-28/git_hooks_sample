@@ -68,6 +68,8 @@ pnpm upgrade
 
 - コミットに応じて自動でバージョンを上げてくれる
 - `package.json`のversionタグ, Tag, Releases, Changelog などを自動で更新してくれる
+- ブランチ保護をしている場合、GitHub Apps を使う必要がある
+  - 詳しくは[こちら](./docs/GitHubApps.md)
 
 ### [copier](https://copier.readthedocs.io/en/stable/)
 

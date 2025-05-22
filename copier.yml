@@ -11,6 +11,7 @@ _exclude:
     - ".svn"
     - "CHANGELOG.md"
     - "README.md"
+    - "release.yml"
 _message_before_copy: |
     git_hooks_sample を対象のディレクトリに適用します
     既存ファイルと競合する場合  Y:上書き | n:スキップ
@@ -24,9 +25,28 @@ _message_after_copy: |
 
     # コミット
     pnpm commit
+
+    {% if branch_protection %}
+    # 自動リリースについて
+    ブランチ保護を優先にしている場合、自動リリースのためにGitHub Appの設定が必要です
+    {% endif %}
 _message_before_update: |
     git_hooks_sample の更新を取り込みます
     既存ファイルと競合する箇所はマーカー付きで取り込まれます
 _message_after_update: |
     git_hooks_sample の更新を取り込みました
     既存ファイルと競合している場合は手動で解消してください
+auto_release:
+    type: bool
+    help: semantic-releaseによる自動リリースを行いますか？
+    choices:
+        - true
+        - false
+branch_protection:
+    when: "{{ auto_release }}"
+    type: bool
+    default: false
+    help: メインブランチを保護していますか？
+    choices:
+        - true
+        - false

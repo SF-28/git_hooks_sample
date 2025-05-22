@@ -1,9 +1,6 @@
 name: Release
 
 on:
-  workflow_dispatch:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -12,21 +9,16 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     steps:
-      # ブランチ保護を回避するため GitHub App を利用
-      # 参考：https://zenn.dev/wakamsha/articles/semantic-release-and-protected-branches
-      - name: Generate Token
-        id: app-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.SEM_RELEASE_APP_ID }}
-          private-key: ${{ secrets.SEM_RELEASE_APP_PRIVATE_KEY }}
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -40,9 +32,6 @@ jobs:
           node-version: '23'
           cache: 'pnpm'
 
-      - name: pnpm audit
-        run: pnpm audit
-
       # prepare スクリプトを無視して依存関係だけ取得
       - name: Install dependencies (skip prepare)
         run: pnpm install --ignore-scripts --frozen-lockfile
@@ -50,4 +39,4 @@ jobs:
       - name: Release
         run: pnpm exec semantic-release
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
