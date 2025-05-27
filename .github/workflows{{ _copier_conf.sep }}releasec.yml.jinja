@@ -1,9 +1,9 @@
 name: Release
 
 on:
-{%- if semantic_release == 'manual' %}
+{%- if semantic_release == 'Manual' %}
   workflow_dispatch:
-{%- elif semantic_release == 'auto' %}
+{%- elif semantic_release == 'Auto' %}
   push:
     branches:
       - main

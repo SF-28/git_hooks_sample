@@ -27,16 +27,15 @@ _message_after_copy: |
     # コミット
     pnpm commit
 
-    {% if semantic_release == 'manual' -%}
+    {%- if semantic_release == 'Manual' -%}
     # リリース
     GitHub -> Actions -> Release -> Run workflow
-    {%- endif %}
-    {% if branch_protection %}
-
+    {%- endif -%}
+    {%- if branch_protection %}
     # GitHub Apps
     ブランチを保護している場合、リリース実行にはGitHub Appの設定が必要です
     docs/GitHubApp.md を参考に設定してください
-    {%- endif %}
+    {%- endif -%}
 _message_before_update: |
     ⚙️ git_hooks_sample の更新を取り込みます
     既存ファイルと競合する箇所はマーカー付きで取り込まれます
@@ -45,20 +44,19 @@ _message_after_update: |
     既存ファイルと競合している場合は手動で解消してください
 semantic_release:
     type: str
-    default: "manual"
+    default: "Manual"
     help: |
         semantic-releaseによるリリース方法を選択
-
-        manual : GitHub Actionsを手動実行
-        auto   : mainブランチ更新で自動実行
+        - Manual : GitHub Actionsを手動実行
+        - Auto   : mainブランチ更新で自動実行
     choices:
-        - "manual"
-        - "auto"
+        - "Manual"
+        - "Auto"
 branch_protection:
     type: bool
     default: false
     help: |
         mainブランチを保護していますか？
     choices:
-        - true
         - false
+        - true
