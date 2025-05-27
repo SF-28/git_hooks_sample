@@ -5,6 +5,7 @@
   "main": "",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prepare": "run-script-os",
     "prepare:win32": "cmd /c \"COPY .\\git_hooks\\commit-msg .\\.git\\hooks\\\"",
     "prepare:darwin": "zsh -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
