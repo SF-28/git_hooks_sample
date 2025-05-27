@@ -9,8 +9,10 @@ module.exports = {
         parserOpts: {
           headerPattern: /^(\p{Emoji}*)?\s*(\w*)(?:\((.*)\))?:\s*(.*)$/u,
           headerCorrespondence: ["emoji", "type", "scope", "subject"],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
         },
         releaseRules: [
+          { breaking: true, release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" },
           { type: "perf", release: "patch" },
@@ -20,7 +22,17 @@ module.exports = {
     ],
 
     // 2. リリースノートのためのコンテンツ（テキスト）を生成する。
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        preset: "conventionalcommits",
+        parserOpts: {
+          headerPattern: /^(\p{Emoji}*)?\s*(\w*)(?:\((.*)\))?:\s*(.*)$/u,
+          headerCorrespondence: ["emoji", "type", "scope", "subject"],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
+        },
+      },
+    ],
 
     // 3. '2' で生成されたリリースノート用コンテンツを Changelog ファイルに記述する。
     [
