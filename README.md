@@ -21,6 +21,10 @@ pnpm install
 
 変更をステージし、`pnpm commit`
 
+## リリース手順(manual)
+
+GitHub -> Actions -> Release -> Run workflow
+
 ## 各種バージョンアップ手順
 
 ```sh

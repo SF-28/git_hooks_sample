@@ -9,9 +9,10 @@ _exclude:
     - ".git"
     - ".DS_Store"
     - ".svn"
-    - "CHANGELOG.md"
     - "README.md"
-    - "release.yml"
+    - "CHANGELOG.md"
+    - ".github/workflows/release.yml"
+    - "docs/GitHubApp.md"
 _message_before_copy: |
     git_hooks_sample を対象のディレクトリに適用します
     既存ファイルと競合する場合  Y:上書き | n:スキップ
@@ -26,9 +27,15 @@ _message_after_copy: |
     # コミット
     pnpm commit
 
+    {% if semantic_release == 'manual' %}
+    # リリース手順
+    GitHub -> Actions -> Release -> Run workflow
+    {% endif %}
+
     {% if branch_protection %}
-    # 自動リリースについて
-    ブランチ保護を優先にしている場合、自動リリースのためにGitHub Appの設定が必要です
+    # GitHub Apps設定
+    ブランチを保護している場合、リリース実行にはGitHub Appの設定が必要です
+    docs/GitHubApp.md を参考に設定してください
     {% endif %}
 _message_before_update: |
     git_hooks_sample の更新を取り込みます
@@ -36,17 +43,22 @@ _message_before_update: |
 _message_after_update: |
     git_hooks_sample の更新を取り込みました
     既存ファイルと競合している場合は手動で解消してください
-auto_release:
-    type: bool
-    help: semantic-releaseによる自動リリースを行いますか？
+semantic_release:
+    type: str
+    default: "manual"
+    help: |
+        semantic-releaseによるリリース方法を選択してください
+        manual : GitHub Actionsを手動実行してリリース
+        auto   : mainブランチが更新されると自動でリリース
     choices:
-        - true
-        - false
+        - "manual"
+        - "auto"
 branch_protection:
-    when: "{{ auto_release }}"
+    when: "{{ semantic_release == 'auto' }}"
     type: bool
     default: false
-    help: メインブランチを保護していますか？
+    help: |
+        mainブランチを保護していますか？
     choices:
         - true
         - false
