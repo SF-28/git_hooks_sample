@@ -1,3 +1,9 @@
+## [2.5.0](https://github.com/SF-28/git_hooks_sample/compare/v2.4.0...v2.5.0) (2025-05-27)
+
+### Features
+
+* pnpm以外を禁止、バッジを追加 ([354d162](https://github.com/SF-28/git_hooks_sample/commit/354d162ba60c7accf0f630b0d1bddf9ddbe0252b))
+
 ## [2.4.0](https://github.com/SF-28/git_hooks_sample/compare/v2.3.0...v2.4.0) (2025-05-27)
 
 ### Features
