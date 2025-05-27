@@ -1,18 +1,15 @@
 name: Release
 
-{% if semantic_release == 'manual' %}
 on:
+{% if semantic_release == 'manual' -%}
   workflow_dispatch:
-{% endif %}
-
-{% if semantic_release == 'auto' %}
-on:
+{%- elif semantic_release == 'auto' -%}
   push:
     branches:
       - main
-{% endif %}
+{%- endif %}
 
-{% if branch_protection %}
+{% if branch_protection -%}
 jobs:
   release:
     name: Release
@@ -56,7 +53,7 @@ jobs:
         run: pnpm exec semantic-release
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-{% else %}
+{%- else -%}
 jobs:
   release:
     name: Release
@@ -92,4 +89,4 @@ jobs:
         run: pnpm exec semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-{% endif %}
+{%- endif %}
