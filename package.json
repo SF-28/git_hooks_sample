@@ -6,10 +6,11 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "run-script-os",
-    "prepare:win32": "cmd /c \"COPY .\\git_hooks\\commit-msg .\\.git\\hooks\\\"",
-    "prepare:darwin": "zsh -c \"cp ./git_hooks/commit-msg ./.git/hooks/\"",
+    "prepare": "simple-git-hooks",
     "commit": "pre-commit run && pnpm cz"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm exec commitlint --edit $1"
   },
   "config": {
     "commitizen": {
@@ -31,8 +32,8 @@
     "cz-customizable": "^7.4.0",
     "eslint": "^9.27.0",
     "globals": "^16.1.0",
-    "run-script-os": "^1.1.6",
-    "semantic-release": "^24.2.4"
+    "semantic-release": "^24.2.4",
+    "simple-git-hooks": "^2.13.0"
   },
   "pnpm": {
     "overrides": {
