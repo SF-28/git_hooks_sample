@@ -12,7 +12,7 @@ _exclude:
     - "README.md"
     - "CHANGELOG.md"
     - ".github/workflows/release.yml"
-    - "{% if branch_protection %}docs{% endif %}"
+    - "{% if not branch_protection %}docs{% endif %}"
 _message_before_copy: |
     ⚙️ git_hooks_sample を対象のディレクトリに適用します
     既存ファイルと競合する場合  [Y] 上書き | [n] スキップ
