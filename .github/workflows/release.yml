@@ -2,8 +2,6 @@ name: Release
 
 on:
   workflow_dispatch:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -38,7 +36,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '23'
-          cache: 'pnpm'           # pnpm-lock.yaml をキーに自動キャッシュ
+          cache: 'pnpm'
 
       - name: pnpm audit
         run: pnpm audit
@@ -47,7 +45,6 @@ jobs:
       - name: Install dependencies (skip prepare)
         run: pnpm install --ignore-scripts --frozen-lockfile
 
-      # semantic-release を実行
       - name: Release
         run: pnpm exec semantic-release
         env:
