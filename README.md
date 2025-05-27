@@ -1,5 +1,7 @@
 # Git hooks サンプル
 
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/SF-28/git_hooks_sample?label=latest)
+
 リポジトリ作成時のサンプルリポジトリ
 
 各種ツールにより、快適で高品質な開発環境を提供する
