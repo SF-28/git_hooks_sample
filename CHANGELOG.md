@@ -1,3 +1,9 @@
+## [2.6.0](https://github.com/SF-28/git_hooks_sample/compare/v2.5.0...v2.6.0) (2025-05-27)
+
+### Features
+
+* simple-git-hooksを導入 ([b0901b3](https://github.com/SF-28/git_hooks_sample/commit/b0901b37a2e82cd6de2e6fdeb43ed338abc649b0))
+
 ## [2.5.0](https://github.com/SF-28/git_hooks_sample/compare/v2.4.0...v2.5.0) (2025-05-27)
 
 ### Features
