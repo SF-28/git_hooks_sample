@@ -21,8 +21,8 @@ jobs:
         id: app-token
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ secrets.SEM_RELEASE_APP_ID }}
-          private-key: ${{ secrets.SEM_RELEASE_APP_PRIVATE_KEY }}
+          app-id: ${{ "{{ secrets.SEM_RELEASE_APP_ID }}" }}
+          private-key: ${{ "{{ secrets.SEM_RELEASE_APP_PRIVATE_KEY }}" }}
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,7 +52,7 @@ jobs:
       - name: Release
         run: pnpm exec semantic-release
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ "{{ steps.app-token.outputs.token }}" }}
 {%- else -%}
 jobs:
   release:
@@ -88,5 +88,5 @@ jobs:
       - name: Release
         run: pnpm exec semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ "{{ secrets.GITHUB_TOKEN }}" }}
 {%- endif %}
