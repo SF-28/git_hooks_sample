@@ -39,7 +39,7 @@ repos:
     hooks:
       - id: eslint
         name: eslint
-        entry: npx eslint
+        entry: pnpm eslint
         language: node
         types: [javascript]
         files: \.(js|jsx|ts|tsx)$

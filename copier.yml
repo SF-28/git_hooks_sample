@@ -23,6 +23,9 @@ _message_after_copy: |
     # セットアップ
     mise install
     pnpm install
+    pnpm approve-builds
+    -> simple-git-hooks を選択
+    -> Do you approve? (y/N) で y
 
     # コミット
     pnpm commit
