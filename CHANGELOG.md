@@ -1,3 +1,9 @@
+## [2.6.1](https://github.com/SF-28/git_hooks_sample/compare/v2.6.0...v2.6.1) (2025-05-30)
+
+### Bug Fixes
+
+* npx-\>pnpm に修正, simple-git-hooks導入手引き追加 ([5140120](https://github.com/SF-28/git_hooks_sample/commit/514012012a28bf365b23852d65ad27b95dd331ad))
+
 ## [2.6.0](https://github.com/SF-28/git_hooks_sample/compare/v2.5.0...v2.6.0) (2025-05-27)
 
 ### Features
