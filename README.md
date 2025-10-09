@@ -83,10 +83,10 @@ pnpm upgrade
 - 本リポジトリのツール群も copier を使って適用することができる
   - `copier copy https://github.com/SF-28/git_hooks_sample <dist>`
 
-## グローバル設定手順
+## グローバル設定
+
+すべてのローカルフォルダで commitizen を使えるようにする
 
 ```sh
-pnpm --dir <git clone した本リポジトリのパス> exec cz
-# よく使うならエイリアス登録
-alias cz='pnpm --dir <git clone した本リポジトリのパス> exec cz'
+sh set_global.sh
 ```
