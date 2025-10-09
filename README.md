@@ -62,7 +62,7 @@ pnpm upgrade
 
 ### [commitizen](https://github.com/commitizen/cz-cli) + [cz-customizable](https://github.com/leoforfree/cz-customizable#steps)
 
-- `.cz_config.js` で設定したコミットメッセージを対話的に作成できる
+- `.cz-config.js` で設定したコミットメッセージを対話的に作成できる
 
 ### [commitlint](https://commitlint.js.org/#/) + [commitlint-config-gitmoji](https://github.com/arvinxx/gitmoji-commit-workflow/tree/master/packages/commitlint-config)
 
@@ -82,3 +82,11 @@ pnpm upgrade
 - テンプレートをプロジェクトに適用するツール
 - 本リポジトリのツール群も copier を使って適用することができる
   - `copier copy https://github.com/SF-28/git_hooks_sample <dist>`
+
+## グローバル設定手順
+
+```sh
+pnpm --dir <git clone した本リポジトリのパス> exec cz
+# よく使うならエイリアス登録
+alias cz='pnpm --dir <git clone した本リポジトリのパス> exec cz'
+```
